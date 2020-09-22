@@ -1,5 +1,5 @@
 FROM ubuntu:groovy
-LABEL maintainer "nitesh231 <niteshraj231@outlook.com>"
+LABEL maintainer "sahyam2019 <sahyam.11907710@lpu.in>"
 
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 RUN apt update && apt -y upgrade && apt install -y tzdata locales
@@ -181,6 +181,6 @@ RUN wget -N https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedrive
     chmod 0755 /usr/bin/chromedriver
     
 # Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/niteshraj2310/oub-remix/sql-extended/requirements.txt
+RUN pip3 install -r https://raw.githubusercontent.com/sahyam2019/oub-remix/sql-extended/requirements.txt
 
 CMD ["bash"]
