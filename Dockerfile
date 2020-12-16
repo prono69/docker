@@ -181,5 +181,8 @@ RUN wget -N https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedrive
     mv -f ~/chromedriver /usr/bin/chromedriver && \
     chown root:root /usr/bin/chromedriver && \
     chmod 0755 /usr/bin/chromedriver
+    
+# Make open port TCP
+EXPOSE 80 443    
 
 CMD ["bash"]
