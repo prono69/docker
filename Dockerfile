@@ -1,5 +1,5 @@
 FROM ubuntu:groovy
-LABEL maintainer "sahyam2019 <sahyam.11907710@lpu.in>"
+LABEL maintainer "prono69 <faltu9851@gmail.com>"
 
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 RUN apt update && apt -y upgrade && apt install -y tzdata locales
@@ -30,6 +30,7 @@ RUN set -ex \
 	&& apt-get update -qq && apt-get -qq install -y --no-install-recommends \
 		dpkg-dev \
 		gcc \
+		g++ \
 		libbluetooth-dev \
 		libbz2-dev \
 		libc6-dev \
@@ -110,7 +111,7 @@ RUN cd /usr/local/bin \
 	&& ln -s python3-config python-config
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 20.2.4
+ENV PYTHON_PIP_VERSION 20.3.3
 # https://github.com/pypa/get-pip
 ENV PYTHON_GET_PIP_URL https://github.com/pypa/get-pip/raw/8283828b8fd6f1783daf55a765384e6d8d2c5014/get-pip.py
 ENV PYTHON_GET_PIP_SHA256 2250ab0a7e70f6fd22b955493f7f5cf1ea53e70b584a84a32573644a045b4bfb
@@ -147,7 +148,6 @@ RUN set -ex; \
 # Install apt for UserBot
 RUN apt-get -qq update && apt-get -qq install -y \
     apt-utils \
-    aria2 \
     bash \
     build-essential \
     curl \
@@ -164,6 +164,7 @@ RUN apt-get -qq update && apt-get -qq install -y \
     unzip \
     unar \
     git \
+    p7zip-full \
     mediainfo \
     libpq-dev \
     sudo \
